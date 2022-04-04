@@ -1,0 +1,1 @@
+const CodeStates = 1*10
