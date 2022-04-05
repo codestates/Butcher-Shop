@@ -11,6 +11,19 @@ export default function App () {
   const [userinfo, setUserinfo] = useState(null);
   const history = useHistory();
   const isAuthenticated = () => {
+    axios.get('https://localhost:4000/auth').then((data)=> {
+      setUserinfo(data.data);
+      console.log(userinfo)
+      setIsLogin(true); 
+      history.push('/');
+    })
+    .catch((err)=> {
+      if(err.response.status===401) {
+        setIsLogin(false);
+        history.push('/');
+      }
+    })
+    
   };
   const handleResponseSuccess = () => {
     isAuthenticated();

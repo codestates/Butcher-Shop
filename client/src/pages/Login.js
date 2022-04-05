@@ -14,6 +14,14 @@ export default function Login ({ handleResponseSuccess }) {
     setLoginInfo({ ...loginInfo, [key]: e.target.value });
   };
   const handleLogin = () => {
+    if(!loginInfo.email || !loginInfo.password) {
+      setErrorMessage('이메일과 비밀번호를 입력하세요')
+      return;
+    }
+    else {
+      setErrorMessage('')
+    }
+    return axios.post('https://localhost:4000/signin',loginInfo).then((data)=>handleResponseSuccess())
   };
   return (
     <div>
@@ -37,7 +45,7 @@ export default function Login ({ handleResponseSuccess }) {
           <button className='btn btn-login' type='submit' onClick={handleLogin}>
             로그인
           </button>
-          <div className='alert-box' />
+          {errorMessage ? <div className='alert-box'>{errorMessage}</div> : null}
         </form>
       </center>
     </div>

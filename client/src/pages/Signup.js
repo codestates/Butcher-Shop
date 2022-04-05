@@ -17,6 +17,15 @@ export default function Signup () {
     setuserinfo({ ...userinfo, [key]: e.target.value });
   };
   const handleSignup = () => {
+    if(!userinfo.email || !userinfo.password || !userinfo.username || !userinfo.mobile) {
+      setErrorMessage('모든 항목은 필수입니다');
+      console.log(errorMessage)
+      return;
+    }
+    else {
+      setErrorMessage('');
+    }
+    return axios.post("https://localhost:4000/signup",userinfo).then((res)=> history.push('/'))
   };
   return (
     <div>
@@ -54,7 +63,7 @@ export default function Signup () {
           >
             회원가입
           </button>
-          <div className='alert-box' />
+          {errorMessage ? <div className='alert-box' >{errorMessage}</div> : null}
         </form>
       </center>
     </div>
