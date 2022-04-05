@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
         nopassworduser = {data: {userInfo: userInfo.dataValues}}
         res.status(200).json(nopassworduser)
       }
-    } catch (err) {
+    } catch (err) { 
     throw err;
   }
 }

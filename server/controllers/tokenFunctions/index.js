@@ -9,7 +9,7 @@ module.exports = {
   sendAccessToken: (res, accessToken) => {
     res.json({ message: 'ok' });
   },
-  isAuthorized: (req) => { 
+  isAuthorized: (req) => {
    if(!req.headers.cookie) {
      return;
    }
