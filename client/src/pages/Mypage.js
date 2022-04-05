@@ -4,7 +4,6 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 
 function Mypage (props) {
-  /* TODO : props로 받은 유저정보를 화면에 표시하세요. */
   return (
     <div>
       <center>

@@ -11,7 +11,6 @@ export default function App () {
   const [userinfo, setUserinfo] = useState(null);
   const history = useHistory();
   const isAuthenticated = () => {
-    // TODO: 이제 인증은 성공했습니다. 사용자 정보를 호출하고, 이에 성공하면 로그인 상태를 바꿉시다.
   };
   const handleResponseSuccess = () => {
     isAuthenticated();

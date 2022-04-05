@@ -1,5 +1,5 @@
 {
-  "name": "Butcher-Shop-server",
+  "name": "butcher-shop-server",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
@@ -10,7 +10,7 @@
     "start": "node index.js",
     "pretest": "npx sequelize-cli db:migrate",
     "test": "NODE_ENV=test mocha '__tests__/server.test.js' --timeout 5000 --exit",
-    "report": "NODE_ENV=test mocha '__tests__/server.test.js' --timeout 5000 --exit --reporter @mochajs/json-file-reporter",
+    "report": "NODE_ENV=test mocha '__tests__/server.test.js' --timeout 5000 --exit --reporter @mochajs/json-file-reporter"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",

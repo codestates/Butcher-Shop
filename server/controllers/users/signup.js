@@ -10,10 +10,7 @@ module.exports = async(req, res) => {
   if(!userInfo) {
     let token =  generateAccessToken(req.body);
      res.cookie("jwt",token).status(201).send({message:'ok'})
-  }
-  else {
+  } else {
      res.status(409).send('email exists');
   }
-  // TODO: 회원가입 및 사용자 생성 로직을 작성하세요.
-  
 };
