@@ -14,7 +14,7 @@
 ![](https://img.shields.io/badge/BACK-Express-092E20?style=for-the-badge)
 
 # 🔨 Architecture
-![Web_App_Reference_Architecture_1](https://user-images.githubusercontent.com/96035912/161691240-4301060b-e301-4de3-a680-45fc0d96b41d.png)
+![Web_App_Reference_Architecture_1](https://cdn.discordapp.com/attachments/960425551754051594/960866421527687198/Sodanen_Screenshot_22.04_05_20_39-33.png.png)
 
 # 🗣 우리를 소개합니다.
 
