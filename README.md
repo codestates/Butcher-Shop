@@ -14,7 +14,8 @@
 ![](https://img.shields.io/badge/BACK-Express-092E20?style=for-the-badge)
 
 # 🔨 Architecture
-![image](https://user-images.githubusercontent.com/96035912/161689041-e80b1b5e-7fbf-47df-bec0-1992729dbc2c.png)
+![Web_App_Reference_Architecture_1](https://user-images.githubusercontent.com/96035912/161691240-4301060b-e301-4de3-a680-45fc0d96b41d.png)
+
 
 # 🗣 우리를 소개합니다.
 
@@ -168,3 +169,6 @@
 - 모바일 대응
 - 국제화 (i18n) 적용
 - 추천 시스템 구현
+
+# 자세한 내용
+<a href="https://github.com/codestates/Butcher-Shop/wiki">링크</a>
