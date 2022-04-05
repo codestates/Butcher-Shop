@@ -1,5 +1,5 @@
 {
-  "name": "Butcher-Shop-client",
+  "name": "butcher-shop-client",
   "version": "1.0.0",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -15,7 +15,7 @@
     "start": "HTTPS=true SSL_CRT_FILE=FILL_ME_IN SSL_KEY_FILE=FILL_ME_IN react-scripts start",
     "build": "react-scripts build",
     "test": "mocha --require @babel/register '__tests__/client.test.js'",
-    "report": "mocha --require @babel/register '__tests__/client.test.js' --reporter @mochajs/json-file-reporter",
+    "report": "mocha --require @babel/register '__tests__/client.test.js' --reporter @mochajs/json-file-reporter"
   },
   "eslintConfig": {
     "extends": "react-app"

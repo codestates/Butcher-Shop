@@ -6,12 +6,8 @@ module.exports = async(req, res) => {
   });
   if(!userInfo) {
     res.status(404).send('invalid user')
-  }
-  else {
+  } else {
     await generateAccessToken(userInfo.dataValues).then((data)=>
      { res.cookie("jwt",data).status(200).send({message:'ok'})})
-    
   }
-  // TODO: 로그인 정보를 통해 사용자 인증 후 토큰 전달
-
 };
