@@ -21,9 +21,13 @@ export default function Main () {
             <div className='item item3'>가공품</div>
         </div>
         <div className='meatList'>
-        <Meat /> <Meat />
-        <Meat />
-        <Meat />
+        <Meat /> <Meat /> <Meat />
+        </div>
+        <div className='meatList2'>
+        <Meat /> <Meat /> <Meat />
+        </div>
+        <div className='meatList3'>
+        <Meat /> <Meat /> <Meat />
         </div>
         <footer>팀 이름: Bulgogi</footer>
         </div>

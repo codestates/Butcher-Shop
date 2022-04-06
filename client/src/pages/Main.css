@@ -42,7 +42,17 @@ body {
   color:white;
 }
 .userimage {
-  height:2rem;
+  width:3rem;
+  height:2rem
+}
+.meatList {
+  display:flex;
+}
+.meatList2 {
+  display:flex;
+}
+.meatList3 {
+  display:flex;
 }
 .item1 {
     background-color:#e97381;
