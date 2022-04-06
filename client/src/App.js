@@ -3,6 +3,7 @@ import { Switch, Route, useHistory, Redirect } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Mypage from './pages/Mypage';
+import Main from './pages/Main';
 import axios from 'axios';
 
 export default function App () {
@@ -54,9 +55,17 @@ export default function App () {
           <Mypage userinfo={userinfo} handleLogout={handleLogout} />
         </Route>
         <Route path='/'>
-          {isLogin ? <Redirect to='/mypage' /> : <Redirect to='/login' />}
+          <Main isLogin={isLogin} />
+          {/* {isLogin ? <Redirect to='/mypage' /> : <Redirect to='/login' />}  */}
         </Route>
       </Switch>
     </div>
   );
 }
+
+/*
+<Route path='/'>
+          <Main isLogin={isLogin}/>
+          {/* {isLogin ? <Redirect to='/mypage' /> : <Redirect to='/login' />} 
+          </Route>
+*/
