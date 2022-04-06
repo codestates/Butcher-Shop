@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-  res.status(205).send('Logged out successfully');
+  res.status(205).clearCookie('jwt').send('Logged out successfully');
 };
