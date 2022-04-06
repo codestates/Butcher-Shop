@@ -14,7 +14,7 @@ module.exports = {
      return;
    }
     let authtoken = req.headers.cookie.split('=')[1].split(' ')[0];
-    let clonetoken = authtoken.slice(0,authtoken.length-1)
+    let clonetoken = authtoken.slice(0,authtoken.length)
     let decodedata ;
     
     verify(clonetoken,process.env.ACCESS_SECRET,(err,decoded)=> {
