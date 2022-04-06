@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
         res.status(401).send({ data: null, message: 'not authorized' }); 
       }
       if (!isAuthorized(req)) {
-        return res.status(401).send({ data: null, message: 'not authorized' }); 
+        return; 
       }
       const accessTokenData =  isAuthorized(req);
       const userInfo = await user.findOne({where: {id:accessTokenData.id}})
