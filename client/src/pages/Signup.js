@@ -6,7 +6,7 @@ axios.defaults.withCredentials = true;
 
 export default function Signup () {
   const [userinfo, setuserinfo] = useState({
-    email: '',
+    userId: '',
     password: '',
     username: '',
     mobile: ''
@@ -17,7 +17,7 @@ export default function Signup () {
     setuserinfo({ ...userinfo, [key]: e.target.value });
   };
   const handleSignup = () => {
-    if(!userinfo.email || !userinfo.password || !userinfo.username || !userinfo.mobile) {
+    if(!userinfo.userId || !userinfo.password || !userinfo.username || !userinfo.mobile) {
       setErrorMessage('모든 항목은 필수입니다');
       console.log(errorMessage)
       return;
@@ -35,7 +35,7 @@ export default function Signup () {
         <form onSubmit={(e) => e.preventDefault()}>
           <div>
             <span>이메일</span>
-            <input type='email' onChange={handleInputValue('email')} />
+            <input type='text' onChange={handleInputValue('userId')} />
           </div>
           <div>
             <span>비밀번호</span>

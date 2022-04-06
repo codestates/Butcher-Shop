@@ -12,7 +12,7 @@
     "react-scripts": "^3.4.3"
   },
   "scripts": {
-    "start": "HTTPS=true SSL_CRT_FILE=FILL_ME_IN SSL_KEY_FILE=FILL_ME_IN react-scripts start",
+    "start": "HTTPS=true SSL_CRT_FILE=../server/cert.pem SSL_KEY_FILE=../server/key.pem react-scripts start",
     "build": "react-scripts build",
     "test": "mocha --require @babel/register '__tests__/client.test.js'",
     "report": "mocha --require @babel/register '__tests__/client.test.js' --reporter @mochajs/json-file-reporter"

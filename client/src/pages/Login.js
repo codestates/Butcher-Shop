@@ -6,7 +6,7 @@ axios.defaults.withCredentials = true;
 
 export default function Login ({ handleResponseSuccess }) {
   const [loginInfo, setLoginInfo] = useState({
-    email: '',
+    userId: '',
     password: ''
   });
   const [errorMessage, setErrorMessage] = useState('');
@@ -14,8 +14,8 @@ export default function Login ({ handleResponseSuccess }) {
     setLoginInfo({ ...loginInfo, [key]: e.target.value });
   };
   const handleLogin = () => {
-    if(!loginInfo.email || !loginInfo.password) {
-      setErrorMessage('이메일과 비밀번호를 입력하세요')
+    if(!loginInfo.userId || !loginInfo.password) {
+      setErrorMessage('아이디와 비밀번호를 입력하세요')
       return;
     }
     else {
@@ -24,30 +24,28 @@ export default function Login ({ handleResponseSuccess }) {
     return axios.post('https://localhost:4000/signin',loginInfo).then((data)=>handleResponseSuccess())
   };
   return (
-    <div>
-      <center>
-        <h1>Sign In</h1>
-        <form onSubmit={(e) => e.preventDefault()}>
-          <div>
-            <span>이메일</span>
-            <input type='email' onChange={handleInputValue('email')} />
+    
+    <div className='LoginForm'>
+        <center>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <div>
+              <span className='Login'>Login</span>
+            </div>
+            <div>
+              <div className ='InputText'>
+                <input type= "text" placeholder="아이디를 입력해 주세요." onChange={handleInputValue('userId')} />
+              </div>
+              <div className ='InputText'>
+                <input type= "password" placeholder="패스워드를 입력해 주세요." onChange={handleInputValue('password')} />
+              </div>
+            </div>
+            <div className ='SignBtn'>
+              <Link to='/signup'>회원가입</Link>
           </div>
-          <div>
-            <span>비밀번호</span>
-            <input
-              type='password'
-              onChange={handleInputValue('password')}
-            />
-          </div>
-          <div>
-            <Link to='/signup'>아직 아이디가 없으신가요?</Link>
-          </div>
-          <button className='btn btn-login' type='submit' onClick={handleLogin}>
-            로그인
-          </button>
+          <button className='LoginBtn' type='submit' onClick={handleLogin}>로그인</button>
           {errorMessage ? <div className='alert-box'>{errorMessage}</div> : null}
-        </form>
-      </center>
-    </div>
+          </form>
+        </center>
+      </div>
   );
 }

@@ -61,3 +61,10 @@ export default function App () {
     </div>
   );
 }
+
+/*
+<Route path='/'>
+          <Main isLogin={isLogin}/>
+          {/* {isLogin ? <Redirect to='/mypage' /> : <Redirect to='/login' />} 
+          </Route>
+*/
