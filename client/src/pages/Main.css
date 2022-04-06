@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin:0;
+    padding:0;
+}
+#main {
+    height:9rem;
+    margin:1rem;
+    padding:1rem;
+    font-size : 6rem;
+    font-style:italic;
+    text-align: center;
+    color: pink;
+    background-color: #721c24;
+    background-image:url(https://cdn.pixabay.com/photo/2016/03/05/23/02/barbecue-1239434_960_720.jpg);
+}
+.userNav {
+  margin:1rem;
+  padding: 0.5rem;  
+  display:flex;
+  text-align: center;
+  background-color: #e97381;
+  justify-content: space-between;
+}
+.meatNav {
+  display:flex;
+  margin:1rem;
+  padding:1rem;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #8b8889;
+}
+.useritem {
+  margin:1rem;
+  color: rgb(47, 51, 51);
+}
+.item {
+  width:30%;
+  padding:0.5rem;
+  color:white;
+}
+.userimage {
+  height:2rem;
+}
+.item1 {
+    background-color:#e97381;
+}
+.item2 {
+    background-color:#e97381
+}
+.item3 {
+    background-color:#e97381 
+}
+footer {
+  color:rgb(39, 12, 12);
+}
