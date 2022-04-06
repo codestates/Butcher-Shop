@@ -23,7 +23,6 @@ export default function App () {
         history.push('/');
       }
     })
-    
   };
   const handleResponseSuccess = () => {
     isAuthenticated();
