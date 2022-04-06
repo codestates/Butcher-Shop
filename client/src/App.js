@@ -4,7 +4,6 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Mypage from './pages/Mypage';
 import axios from 'axios';
-import './App.css';
 
 export default function App () {
   const [isLogin, setIsLogin] = useState(false);
