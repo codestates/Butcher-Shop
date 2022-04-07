@@ -17,6 +17,7 @@ module.exports = async (req, res) => {
     }
 
     // 비밀번호가 맞지 않으면 에러 반환
+    const accessTokenData = isAuthorized(req);
     const userInfo = await user.findOne({
         where: {
             id: accessTokenData.id,
@@ -30,7 +31,6 @@ module.exports = async (req, res) => {
     }
 
     // 새로운 비밀번호로 변경
-    const accessTokenData = isAuthorized(req);
     await user.update(
         {password: newPassword},
         {where: {id:accessTokenData.id }}
