@@ -4,5 +4,6 @@ module.exports = {
   signin: require('./users/signin'),
   signout: require('./users/signout'),
   changePassword: require('./users/changePassword'),
+  changeUserInfo: require('./users/changeUserInfo'),
   dropsign: require('./users/dropsign')
 };
