@@ -6,7 +6,7 @@ module.exports = async(req, res) => {
   // 한번의 requst에 2번 이상의 response가 반환되지 않는다.
 
   // 입력값이 하나라도 없으면 에러 반환
-  if(Object.entries(req.body).every(item=>item[1])) {
+  if(!Object.entries(req.body).every(item=>item[1])) {
     return res.status(422).send('insufficient parameters supplied')
   }
 
