@@ -11,13 +11,13 @@ module.exports = {
       userId: {
         type: Sequelize.STRING
       },
-      email: {
-        type: Sequelize.STRING
-      },
       password: {
         type: Sequelize.STRING
       },
       username: {
+        type: Sequelize.STRING
+      },
+      birthday: {
         type: Sequelize.STRING
       },
       mobile: {
