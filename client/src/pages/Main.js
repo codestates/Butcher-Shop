@@ -5,22 +5,36 @@ import './Main.css';
 import Meat from '../component/Meat.js'
 import data from './image/data.js'
 
-export default function Main () {
+export default function Main ({isLogin,handleLogout}) {
+    const [categoryData , setcategoryData] = useState(data)
+    const handleClickCategory = (event) => {
+      let newCategoryData = data.filter((el)=> {
+            if(el.category===event.target.value) {
+                return el;
+            }
+        })
+      setcategoryData(newCategoryData);
+    }
+
     return (
-        <div>
+        <div id='all'>
         <h1 id = 'main'>Bucher Shop</h1>
         <div className='userNav'>
-            <img src = {data[9].src} className='useritem userimage'/>
-            <Link to='/login' className='useritem'>로그인</Link>
-            <div className='useritem'>로그 아웃</div>
+            {isLogin ? 
+            <div className='afterLogin'>
+                <Link to = '/mypage'><img src = {data[9].src} className='useritem userimage'/></Link>
+                <div className='useritem logout' onClick={handleLogout}>로그 아웃</div>
+            </div>
+            : <Link to='/login' className='useritem'>로그인</Link> }
             <input type='text' placeholder='검색창' className='search'></input>
         </div>
         <div className='meatNav'> 
-            <div className='item item1'>소고기</div> 
+            <div className='item item1' onClick={handleClickCategory}>소고기</div> 
             <div className='item item2'>돼지 고기</div> 
             <div className='item item3'>가공품</div>
         </div>
         <div className='meatList'>
+        
         <Meat source = {data[0].src} price = {data[0].price} name = {data[0].name}/>
         <Meat source = {data[1].src} price = {data[1].price} name = {data[1].name}/>
         <Meat source = {data[2].src} price = {data[2].price} name = {data[2].name}/>
