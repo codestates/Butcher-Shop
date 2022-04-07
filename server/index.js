@@ -29,6 +29,7 @@ app.post('/signout', controllers.signout);
 app.post('/dropsign', controllers.dropsign);
 
 //PATCH:자료(row)의 속성 변경하기
+app.patch('/userinfo', controllers.changeUserInfo);
 app.patch('/password', controllers.changePassword);
 
 //PUT:자료(row)를 전부 새것으로 변경하기
