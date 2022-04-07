@@ -1,13 +1,12 @@
-import meat from '../pages/image/meat.png';
 import React, { useState } from 'react';
 import './Meat.css';
 
-export default function Meat () {
+export default function Meat ({source,price,name}) {
     return (
         <div>
-            <img src = {meat} />
-            <div>가격:50000원</div>
-            <div>상품명:한우sss급</div>
+            <img src = {source} />
+            <div>{price}</div>
+            <div>상품명:{name}</div>
         </div>
     );
 }
