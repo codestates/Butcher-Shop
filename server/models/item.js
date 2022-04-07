@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       inventory: DataTypes.STRING,
       description: DataTypes.STRING,
       origin: DataTypes.STRING,
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      image: DataTypes.STRING
     },
     {
       sequelize,
