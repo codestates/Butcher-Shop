@@ -29,6 +29,9 @@ module.exports = {
       },
       type: {
           type: Sequelize.INTEGER
+      },
+      image: {
+        type: Sequelize.STRING
       }
     });
   },
