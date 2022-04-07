@@ -18,12 +18,22 @@ app.use(
   })
 );
 app.use(cookieParser());
+
+// GET:자료(row) 가져오기
 app.get('/auth', controllers.auth);
+
+// POST:자료(row) 생성하기
 app.post('/signup', controllers.signup);
 app.post('/signin', controllers.signin);
 app.post('/signout', controllers.signout);
-app.post('/changePassword', controllers.changePassword);
 app.post('/dropsign', controllers.dropsign);
+
+//PATCH:자료(row)의 속성 변경하기
+app.patch('/password', controllers.changePassword);
+
+//PUT:자료(row)를 전부 새것으로 변경하기
+
+//DELETE: 자료(row) 삭제하기
 
 const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
 
