@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import './Main.css';
-import image from './image/user.png'
-import Meat from '../component/Meat.js'
 
 export default function Main () {
     return (
-        <div>
-        <h1 id = 'main'>Bucher Shop</h1>
-        <div className='userNav'>
-            <img src = {image} className='useritem userimage'/>
-            <Link to='/login' className='useritem'>로그인</Link>
-            <div className='useritem'>로그 아웃</div>
-            <input type='text' placeholder='검색창' className='useritem'></input>
-        </div>
-        <div className='meatNav'> 
-            <div className='item item1'>소고기</div> 
-            <div className='item item2'>돼지 고기</div> 
-            <div className='item item3'>가공품</div>
-        </div>
-        <div className='meatList'>
-        <Meat /> <Meat />
-        <Meat />
-        <Meat />
-        </div>
-        <footer>팀 이름: Bulgogi</footer>
+        <div className='TopMainPage'>
+
+            <div className='TopMain'>
+                <div className='BackgroundImg'></div>
+                <div className='Main'>Bucher Shop</div>
+            </div>
+
+            <div className='UserNav'>
+                <div className='UserImage'></div>
+                <Link to='/login' className='UserItem'>로그인</Link>
+                <Link to='/login' className='UserItem'>로그아웃</Link>
+                <input type='search' spellCheck="true"  placeholder='무엇을 검색할까요?' className='SeachItem'></input>
+            </div>
+
+            <div className='MeatNav'>
+                <div class="ItemMenu">소고기</div>
+                <div class="ItemMenu">돼지고기</div>
+                <div class="ItemMenu">가공품</div>
+            </div>
+
+            <div className='MeatList'>
+                <div>Creat Table 6*3</div>
+            </div>
         </div>
         
     );

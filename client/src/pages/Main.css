@@ -5,54 +5,101 @@ body {
     margin:0;
     padding:0;
 }
-#main {
-    height:9rem;
-    margin:1rem;
-    padding:1rem;
-    font-size : 6rem;
-    font-style:italic;
-    text-align: center;
-    color: pink;
-    background-color: #721c24;
-    background-image:url(https://cdn.pixabay.com/photo/2016/03/05/23/02/barbecue-1239434_960_720.jpg);
+
+.TopMainPage {
+  position: absolute;
+  left: 50%;
+  width: 1500px;
+  height: 1080px;
+  transform: translateX(-50%);
 }
-.userNav {
-  margin:1rem;
-  padding: 0.5rem;  
-  display:flex;
+
+.TopMain > .BackgroundImg {
+  position: relative;
+  width: 1500;
+  height: 300px;
+  background: url("https://cdn.pixabay.com/photo/2016/03/05/23/02/barbecue-1239434_960_720.jpg");
+  -webkit-filter: blur(3px); 
+  -moz-filter: blur(3px); 
+  -o-filter: blur(3px); 
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+  background-size: cover;
+}
+
+.TopMain >.Main {
+  position: relative;
   text-align: center;
-  background-color: #e97381;
-  justify-content: space-between;
+  top: -220px;
+  padding: 0%;
+  margin: 0%;
+  font-size: 100px;
 }
-.meatNav {
-  display:flex;
-  margin:1rem;
-  padding:1rem;
-  justify-content: space-between;
+
+.UserNav {
+  position: relative;
+  top: -110px;
+  height: 100px;
   text-align: center;
-  background-color: #8b8889;
+  background-color: #C44F67;
+  border-radius: 10px;
 }
-.useritem {
-  margin:1rem;
-  color: rgb(47, 51, 51);
+
+.UserNav > .UserImage {
+  position: relative;
+  background-image:url('./image/user.png');
+  background-size: cover;
+  background-color: transparent;
+  top: 10px;
+  left: 25px;
+  width: 80px;
+  height: 80px;
 }
-.item {
-  width:30%;
-  padding:0.5rem;
-  color:white;
+
+.UserNav > .UserItem {
+  position: relative;
+  top: -45px;
+  left: -350px;
+  padding-right: 50px;
+  font-size: 15pt;
 }
-.userimage {
-  height:2rem;
+
+.UserNav > .SeachItem {
+  position: relative;
+  top: -45px;
+  right: -400px;
+  padding-right: 50px;
+  font-size: 15pt;
 }
-.item1 {
-    background-color:#e97381;
+
+.MeatNav {
+  background-color: #913057;
+  position: relative;
+  top: -109px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.item2 {
-    background-color:#e97381
+
+.ItemMenu {
+  color: black;
+  background-color: #DEC6EC;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0px;
+  line-height: 10px;
+
 }
-.item3 {
-    background-color:#e97381 
-}
-footer {
-  color:rgb(39, 12, 12);
+
+.MeatList {
+  border: 1px solid red;
+  position: relative;
+  top: -100px;
+  height: 1500px;
+  padding-right: 50px;
+  font-size: 15pt;
 }
