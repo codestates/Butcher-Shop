@@ -23,6 +23,7 @@ app.post('/signup', controllers.signup);
 app.post('/signin', controllers.signin);
 app.post('/signout', controllers.signout);
 app.post('/changePassword', controllers.changePassword);
+app.post('/dropsign', controllers.dropsign);
 
 const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
 
