@@ -30,7 +30,7 @@ export default function ChangePassword () {
      oldPassword,newPassword
     }
     return axios
-      .patch("https://localhost:4000/changePassword",dataToSend)
+      .patch("https://localhost:4000/password",dataToSend)
       .then(()=> history.push('/mypage'))
   };
   return (
