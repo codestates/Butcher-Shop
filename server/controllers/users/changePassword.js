@@ -1,5 +1,5 @@
 const { user } = require('../../models');
-const { isAuthorized } = require('../tokenFunctions');
+const { isAuthorized } = require('../tokenfunctions');
 
 module.exports = async (req, res) => {
     // 쿠키가 없으면 에러 반환
@@ -17,14 +17,14 @@ module.exports = async (req, res) => {
     }
 
     // 비밀번호가 맞지 않으면 에러 반환
-    const accessTokenData = isAuthorized(req);
-    const userInfo = await user.findOne({
+    const accesstokendata = isAuthorized(req);
+    const userinfo = await user.findOne({
         where: {
-            id: accessTokenData.id,
+            id: accesstokendata.id,
             password:req.body.oldPassword
         }
     })
-    if (!userInfo) {
+    if (!userinfo) {
         return res.status(401).send(
             { data: null, message: 'password does not match' }
         );
@@ -32,8 +32,8 @@ module.exports = async (req, res) => {
 
     // 새로운 비밀번호로 변경
     await user.update(
-        {password: newPassword},
-        {where: {id:accessTokenData.id }}
+        {password: req.body.newPassword},
+        {where: {id:accesstokendata.id }}
     )
 
     // 처리 완료 메시지 반환
