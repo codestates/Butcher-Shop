@@ -1,5 +1,5 @@
 const { user } = require('../../models');
-const { isAuthorized } = require('../tokenfunctions');
+const { isAuthorized } = require('../tokenFunctions');
 
 module.exports = async (req, res) => {
     // 쿠키가 없으면 에러 반환
@@ -17,10 +17,10 @@ module.exports = async (req, res) => {
     }
 
     // 비밀번호가 맞지 않으면 에러 반환
-    const accesstokendata = isAuthorized(req);
+    const accesstokenData = isAuthorized(req);
     const userinfo = await user.findOne({
         where: {
-            id: accesstokendata.id,
+            id: accesstokenData.id,
             password:req.body.oldPassword
         }
     })
@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
     // 새로운 비밀번호로 변경
     await user.update(
         {password: req.body.newPassword},
-        {where: {id:accesstokendata.id }}
+        {where: {id:accesstokenData.id }}
     )
 
     // 처리 완료 메시지 반환
