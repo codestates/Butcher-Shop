@@ -26,7 +26,7 @@ export default function Dropsign ({handleLogout}) {
       setErrorMessage('');
     const dataToSend = {
      userId,password
-    }
+    } 
     return axios
       .post("https://localhost:4000/dropsign",dataToSend)
       .then(()=> handleLogout())
