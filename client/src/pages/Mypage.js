@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './Mypage.css';
+import { Link } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 
 function Mypage (props) {
@@ -19,7 +20,7 @@ function Mypage (props) {
             </div>
 
             <div className='MenuNav'>
-              <div className='NavItem'>회원 정보 수정</div>
+              <Link to = '/changePassword'> <div className='NavItem'>회원 정보 수정</div> </Link>
               <div className='NavItem'>회원탈퇴</div>
             </div>
 

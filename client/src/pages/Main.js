@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Main.css';
@@ -11,6 +11,10 @@ export default function Main ({isLogin,handleLogout}) {
     const [imageClick , setimageClick] = useState(false)
     const [imageName , setimageName] = useState()
     const [categoryClick , setcategoryClick] = useState(false);
+    const [searchValue,setsearchValue] = useState('') 
+    useEffect(()=> {
+        
+    },[searchValue])
     const handleClickCategory = (event) => {
         // console.log(event.target.innerHTML)
        setcategoryClick(true);
@@ -28,8 +32,8 @@ export default function Main ({isLogin,handleLogout}) {
     const closeModal = () => {
         setimageClick(false);
     }
-    const handleSearch = () => {
-        
+    const handleSearch = (event) => {
+        setsearchValue(event.target.value)
     }
 
     return (
@@ -42,7 +46,7 @@ export default function Main ({isLogin,handleLogout}) {
                 <div className='useritem logout' onClick={handleLogout}>로그 아웃</div>
             </div>
             : <Link to='/login' className='useritem'>로그인</Link> }
-            <input type='text' placeholder='메뉴를 검색해 보세요!' className='search' onChange = {(event)=>handleSearch}></input>
+            <input type='text' placeholder='메뉴를 검색해 보세요!' className='search' onChange = {(event)=>handleSearch(event)}></input>
         </div>
         <div className='meatNav'> 
             <div className='item item1' onClick={(event) => handleClickCategory(event)}>소고기</div> 

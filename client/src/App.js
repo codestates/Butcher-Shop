@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Mypage from './pages/Mypage';
 import Main from './pages/Main';
 import axios from 'axios';
+import ChangePassword from './pages/ChangePassword';
 
 export default function App () {
   const [isLogin, setIsLogin] = useState(false);
@@ -50,6 +51,9 @@ export default function App () {
         </Route>
         <Route exact path='/signup'>
           <Signup isLogin={isLogin} />
+        </Route>
+        <Route exact path='/changePassword'>
+          <ChangePassword />
         </Route>
         <Route exact path='/mypage'>
           <Mypage userinfo={userinfo} handleLogout={handleLogout} />
