@@ -1,5 +1,5 @@
 const { user } = require('../../models');
-const { isAuthorized } = require('../tokenfunctions');
+const { isAuthorized } = require('../tokenFunctions');
 
 module.exports = async (req, res) => {
     // 쿠키가 없으면 에러 반환

@@ -20,8 +20,8 @@ function Mypage (props) {
             </div>
 
             <div className='MenuNav'>
-              <Link to = '/changePassword'> <div className='NavItem'>회원 정보 수정</div> </Link>
-              <div className='NavItem'>회원탈퇴</div>
+              <Link to = '/changePassword'> <div className='NavItem'>회원 정보 수정</div></Link>
+              <Link to = '/dropsign'><div className='NavItem'>회원탈퇴</div></Link>
             </div>
 
 
