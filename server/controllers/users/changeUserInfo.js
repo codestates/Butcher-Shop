@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
     }
 
     // 해당 타겟 업데이트
-    const accessTokenData = isauthorized(req);
+    const accessTokenData = isAuthorized(req);
     await user.update(
         {[req.body.target]: req.body.value},
         {where: {id:accessTokenData.id }}

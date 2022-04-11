@@ -8,6 +8,7 @@ import axios from 'axios';
 import ChangePassword from './pages/ChangePassword';
 import Dropsign from './pages/Dropsign';
 import Basket from './pages/Basket'
+import ChangeUserInfo from './pages/ChangeUserInfo';
 
 export default function App () {
   const [isLogin, setIsLogin] = useState(false);
@@ -56,6 +57,9 @@ export default function App () {
         </Route>
         <Route exact path='/changePassword'>
           <ChangePassword />
+        </Route>
+        <Route exact path='/changeUserInfo'>
+          <ChangeUserInfo />
         </Route>
         <Route exact path='/basket'>
           <Basket />
