@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "HTTPS=true SSL_CRT_FILE=../server/cert.pem SSL_KEY_FILE=../server/key.pem react-scripts start",
-    "build": "react-scripts build",
+    "build": "env-cmd -f .env.production react-scripts build",
     "test": "mocha --require @babel/register '__tests__/client.test.js'",
     "report": "mocha --require @babel/register '__tests__/client.test.js' --reporter @mochajs/json-file-reporter"
   },
