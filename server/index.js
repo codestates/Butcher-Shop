@@ -21,6 +21,7 @@ app.use(cookieParser());
 
 // GET:자료(row) 가져오기
 app.get('/auth', controllers.auth);
+app.get('/items', controllers.getItems);
 
 // POST:자료(row) 생성하기
 app.post('/signup', controllers.signup);
