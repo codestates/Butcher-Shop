@@ -12,9 +12,19 @@ export default function Main ({isLogin,handleLogout}) {
     const [imageName , setimageName] = useState()
     const [categoryClick , setcategoryClick] = useState(false);
     const [searchValue,setsearchValue] = useState('') 
+    const [searchData , setsearchData] = useState(data)
     useEffect(()=> {
-        
-    },[searchValue])
+        const filterSearchData = data.filter((el)=> {
+           if(searchValue==='') {
+              return el;
+           }
+           else {
+              return el.name===searchValue
+              }
+        })
+        setsearchData(filterSearchData);
+    }  ,[searchValue])
+
     const handleClickCategory = (event) => {
         // console.log(event.target.innerHTML)
        setcategoryClick(true);
@@ -44,6 +54,7 @@ export default function Main ({isLogin,handleLogout}) {
             <div className='afterLogin'>
                 <Link to = '/mypage'><img src = {data[9].src} className='useritem userimage'/></Link>
                 <div className='useritem logout' onClick={handleLogout}>로그 아웃</div>
+                <Link to = '/basket'><div className='useritem'>장바구니</div></Link>
             </div>
             : <Link to='/login' className='useritem'>로그인</Link> }
             <input type='text' placeholder='메뉴를 검색해 보세요!' className='search' onChange = {(event)=>handleSearch(event)}></input>
@@ -58,7 +69,7 @@ export default function Main ({isLogin,handleLogout}) {
             {imageClick===true ? <Modal imageName = {imageName} closeModal = {closeModal}/> : null}
         </div>
         <div className='meatContainer'>
-        {!categoryClick ?  data.map((el)=> {
+        {!categoryClick ?  searchData.map((el)=> {
             if(el.category===undefined) {
                 return;
             }
