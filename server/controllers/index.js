@@ -6,5 +6,6 @@ module.exports = {
   changePassword: require('./users/changePassword'),
   changeUserInfo: require('./users/changeUserInfo'),
   dropsign: require('./users/dropsign'),
-  getItems: require('./items/getItems')
+  getItems: require('./items/getItems'),
+  orderItems: require('./orders/orderItems')
 };

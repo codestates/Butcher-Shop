@@ -28,6 +28,7 @@ app.post('/signup', controllers.signup);
 app.post('/signin', controllers.signin);
 app.post('/signout', controllers.signout);
 app.post('/dropsign', controllers.dropsign);
+app.post('/orderitems', controllers.orderItems);
 
 //PATCH:자료(row)의 속성 변경하기
 app.patch('/userinfo', controllers.changeUserInfo);
