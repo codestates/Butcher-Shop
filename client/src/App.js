@@ -38,6 +38,9 @@ export default function App () {
       history.push('/');
     });
   };
+  const handleChangeUser = (data) => {
+  
+  }
 
   useEffect(() => {
     isAuthenticated();
@@ -59,7 +62,7 @@ export default function App () {
           <ChangePassword />
         </Route>
         <Route exact path='/changeUserInfo'>
-          <ChangeUserInfo />
+          <ChangeUserInfo handleChangeUser = {handleChangeUser} />
         </Route>
         <Route exact path='/basket'>
           <Basket />

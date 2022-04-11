@@ -5,7 +5,7 @@ import './ChangeUserInfo.css';
 
 axios.defaults.withCredentials = true;
 
-export default function ChangeUserInfo () {
+export default function ChangeUserInfo ({handleChangeUser}) {
   const [userinfo, setuserinfo] = useState({
     birthdayYear:'',
     birthdayMonth:'',
@@ -44,7 +44,7 @@ export default function ChangeUserInfo () {
     }
     return axios
       .patch("https://localhost:4000/userinfo",dataToSend)
-      .then(()=> history.push('/mypage'))
+      .then((data)=> {console.log(data)}).then(()=>history.push('/mypage'))
   };
   return (
     <div className='main'>
