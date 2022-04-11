@@ -14,12 +14,15 @@ export default function Main ({isLogin,handleLogout}) {
     const [searchValue,setsearchValue] = useState('') 
     const [searchData , setsearchData] = useState(data)
     useEffect(()=> {
-        const filterSearchData = data.filter((el)=> {
+       const filterSearchData = data.filter((el)=> {
            if(searchValue==='') {
               return el;
            }
+           if(el.name===undefined) {
+               return;
+           }
            else {
-              return el.name===searchValue
+             return el.name.includes(searchValue)
               }
         })
         setsearchData(filterSearchData);
@@ -33,6 +36,10 @@ export default function Main ({isLogin,handleLogout}) {
                 return el;
             }
         })
+        if(event.target.innerHTML==='전체보기') {
+            newCategoryData = data;
+            setcategoryClick(false);
+        }
       setcategoryData(newCategoryData); 
     }
     const handleimageClick = (name) => {
@@ -60,6 +67,7 @@ export default function Main ({isLogin,handleLogout}) {
             <input type='text' placeholder='메뉴를 검색해 보세요!' className='search' onChange = {(event)=>handleSearch(event)}></input>
         </div>
         <div className='meatNav'> 
+            <div className='item item4' onClick={(event) => handleClickCategory(event)}>전체보기</div>
             <div className='item item1' onClick={(event) => handleClickCategory(event)}>소고기</div> 
             <div className='item item2' onClick={(event) => handleClickCategory(event)}>돼지 고기</div> 
             <div className='item item3' onClick={(event) => handleClickCategory(event)}>닭고기</div>
@@ -91,25 +99,7 @@ export default function Main ({isLogin,handleLogout}) {
         })
     }
         </div>
-        {/*
-        <div className='meatList'>
-        <Meat source = {data[0].src} price = {data[0].price} name = {data[0].name} handleimageClick={handleimageClick}/>
-        <Meat source = {data[1].src} price = {data[1].price} name = {data[1].name} handleimageClick={handleimageClick}/>
-        <Meat source = {data[2].src} price = {data[2].price} name = {data[2].name} handleimageClick={handleimageClick}/>
         </div>
-        <div className='meatList2'>
-        <Meat source = {data[3].src} price = {data[3].price} name = {data[3].name} handleimageClick={handleimageClick}/> 
-        <Meat source = {data[4].src} price = {data[4].price} name = {data[4].name} handleimageClick={handleimageClick}/> 
-        <Meat source = {data[5].src} price = {data[5].price} name = {data[5].name} handleimageClick={handleimageClick}/>
-        </div>
-        <div className='meatList3'>
-        <Meat source = {data[6].src} price = {data[6].price} name = {data[6].name} handleimageClick={handleimageClick}/>
-        <Meat source = {data[7].src} price = {data[7].price} name = {data[7].name} handleimageClick={handleimageClick}/>
-        <Meat source = {data[8].src} price = {data[8].price} name = {data[8].name} handleimageClick={handleimageClick}/>
-        </div>
-            */}  
-        </div>
-        
     );
 }
 

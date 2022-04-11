@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './Mypage.css';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 axios.defaults.withCredentials = true;
 
 function Mypage ({userinfo}) {
