@@ -91,13 +91,6 @@
     font-size: 17pt;
 }
 
-.input {
-    position: absolute;
-    left: 240px;
-    height: 60px;
-    border: 1px solid rebeccapurple;
-}
-
 .BarWidth{
     position: relative;
     top: 50px;
@@ -109,48 +102,48 @@
     top: 50px;
     left: 240px;
     width: 5px;
-    height: 734px;
+    height: 500px;
     border-right: 4px solid white;
 }
-
-.Input {
+.usernameValue {
     position: absolute;
-    left: 240px;
-    height: 60px;
-    border: 1px solid rebeccapurple;
+    top: 30px;
+    left:240px;
+    width:5px;
+    height:50px;
+    color:rgb(92, 48, 117);
+    font-size:3rem;
+    
+
+}
+.useridValue {
+    position: absolute;
+    top: 30px;
+    left:240px;
+    width:5px;
+    height:50px;
+    color:rgb(92, 48, 117);
+    font-size:3rem;
+    
+}
+.birthdayValue {
+    position: absolute;
+    top: 30px;
+    left:240px;
+    width:5px;
+    height:50px;
+    color:rgb(92, 48, 117);
+    font-size:3rem;
+    
+}
+.mobileValue {
+    position: absolute;
+    top: 30px;
+    left:240px;
+    width:5px;
+    height:50px;
+    color:rgb(92, 48, 117);
+    font-size:3rem;
+    
 }
 
-.MBirthday {
-    position: absolute;
-    left: 450px;
-    height: 60px;
-    border: 1px solid rebeccapurple;
-}
-
-.DBirthday {
-    position: absolute;
-    left: 660px;
-    height: 60px;
-    border: 1px solid rebeccapurple;
-}
-
-.SPhone {
-    position: absolute;
-    left: 450px;
-    height: 60px;
-    border: 1px solid rebeccapurple;
-}
-
-.Save {
-    display: none;
-
-    position: absolute;
-    top: 850px;
-    height: 60px;
-    width: 50px;
-    left: 0%;
-    background-color: #BCD45F;
-    border-radius: 50px;
-    color: white;
-    font-size:14pt; width:100%;
-}

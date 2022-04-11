@@ -4,12 +4,13 @@ import './Mypage.css';
 import { Link } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 
-function Mypage (props) {
-  if(!props.userinfo) {
+function Mypage ({userinfo}) {
+  if(!userinfo) {
     return '';
   }
   //이름, 아이디 생년월일 비밀번호 비밀번호 확인 전화번호
   return (
+    
     <div className='MyPage'>
       <center>
         <form onSubmit={(e) => e.preventDefault()}>
@@ -32,52 +33,31 @@ function Mypage (props) {
 
               <div className='InfoItem'>
                 <div className='AcountInfo'>이름</div>
-                <input type='text' className='Input'></input>
+                <div className='usernameValue'>{userinfo.data.userInfo.username}</div>
               </div>
 
               <div className='BarWidth'></div>
 
               <div className='InfoItem'>
                 <div className='AcountInfo'>아이디</div>
-                <input type='text' className='Input'></input>
-              </div>
-
-              <div className='BarWidth'></div>
-
-              <div className='InfoItem'>
-                <div className='AcountInfo'>비밀번호</div>
-                <input type='text' className='Input'></input>
-              </div>
-
-              <div className='BarWidth'></div>
-
-              <div className='InfoItem'>
-                <div className='AcountInfo'>비밀번호 확인</div>
-                <input type='text' className='Input'></input>
+                <div className='useridValue'>{userinfo.data.userInfo.userId}</div>
               </div>
 
               <div className='BarWidth'></div>
 
               <div className='InfoItem'>
                 <div className='AcountInfo'>생년월일</div>
-                <input type='number' className='Input'></input>
-                <input type='number' className='MBirthday'></input>
-                <input type='number' className='DBirthday'></input>
+                <div className='birthdayValue'>{userinfo.data.userInfo.birthday}</div>
               </div>
 
               <div className='BarWidth'></div>
 
               <div className='InfoItem'>
                 <div className='AcountInfo'>전화번호</div>
-                <input type='number'className='Input'></input>
-                <input type='number2'className='SPhone'></input>
+                <div className='mobileValue'>{userinfo.data.userInfo.mobile}</div>
               </div>
 
               <div className='BarWidth'></div>
-            </div>
-
-            <div className='SaveBtn'>
-              <button className='Save' type='submit'>로그인</button>
             </div>
         </form>
       </center>
