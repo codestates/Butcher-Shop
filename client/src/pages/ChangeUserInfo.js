@@ -5,7 +5,7 @@ import './ChangeUserInfo.css';
 
 axios.defaults.withCredentials = true;
 
-export default function ChangeUserInfo ({handleChangeUser}) {
+export default function ChangeUserInfo () {
   const [userinfo, setuserinfo] = useState({
     birthdayYear:'',
     birthdayMonth:'',
@@ -37,14 +37,23 @@ export default function ChangeUserInfo ({handleChangeUser}) {
         return setErrorMessage('전화번호의 모든 항목은 필수입니다.')
     }
     }
-    
-    const dataToSend = {
-        mobile:mobileHead+mobileBody,
-        birthday:`${birthdayYear}.${birthdayMonth}.${birthdayDay}`,
+    let dataToSend = {
+      mobile:mobileHead+mobileBody,
+      birthday:`${birthdayYear}.${birthdayMonth}.${birthdayDay}`,
+    }
+    if((birthdayYear && birthdayMonth && birthdayDay )&&(!mobileBody && !mobileHead)) {
+            dataToSend = {
+            birthday:`${birthdayYear}.${birthdayMonth}.${birthdayDay}`
+        }
+    }
+    else if((!birthdayYear && !birthdayMonth && !birthdayDay )&&(mobileBody && mobileHead)) {
+            dataToSend = {
+            mobile:mobileHead+mobileBody,
+        }
     }
     return axios
       .patch("https://localhost:4000/userinfo",dataToSend)
-      .then((data)=> {console.log(data)}).then(()=>history.push('/mypage'))
+      .then(history.push('/')).then(window.location.reload(false))
   };
   return (
     <div className='main'>

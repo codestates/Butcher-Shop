@@ -38,9 +38,6 @@ export default function App () {
       history.push('/');
     });
   };
-  const handleChangeUser = (data) => {
-  
-  }
 
   useEffect(() => {
     isAuthenticated();
@@ -62,7 +59,7 @@ export default function App () {
           <ChangePassword />
         </Route>
         <Route exact path='/changeUserInfo'>
-          <ChangeUserInfo handleChangeUser = {handleChangeUser} />
+          <ChangeUserInfo  />
         </Route>
         <Route exact path='/basket'>
           <Basket />
@@ -75,7 +72,7 @@ export default function App () {
           <Mypage userinfo={userinfo} handleLogout={handleLogout} />
         </Route>
         <Route path='/'>
-          <Main isLogin={isLogin} handleLogout={handleLogout}/>
+          <Main isLogin={isLogin} handleLogout={handleLogout} />
           {/* {isLogin ? <Redirect to='/mypage' /> : <Redirect to='/login' />}  */}
         </Route>
       </Switch>
