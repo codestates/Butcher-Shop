@@ -18,11 +18,10 @@ module.exports = async (req, res) => {
 
     // 해당 타겟 업데이트
     const accessTokenData = isAuthorized(req);
-    await user.update(
-        {[req.body.target]: req.body.value},
-        {where: {id:accessTokenData.id }}
-    )
+    const userInfo = Object.assign({},req.body) // 객체를 복사한다.
+    await user.update(userInfo, {where: {id: accessTokenData.id}})
+    
 
     // 처리 완료 메시지 반환
-    return res.status(200).send(`${req.body.target} change ok`)
+    res.status(200).send(`${userInfo} change ok`)
 }
