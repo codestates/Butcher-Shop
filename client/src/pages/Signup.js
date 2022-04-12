@@ -46,17 +46,18 @@ export default function Signup () {
     <div className='main'>
       <center className='context'>
         <div className='line'></div>
-        <h1>회원 정보 입력</h1>
+        <h1 className='SignUpText'>회원 정보 입력</h1>
+        <div className='SubText'>- 아래 입력사항을 모두 입력해 주십시오.</div>
         <form onSubmit={(e) => e.preventDefault()}>
-          <table>
+          <table className='SingTable'>
             <tbody>
               <tr>
                 <td className='item-name'>이름</td>
-                <td><input type='text' onChange={handleInputValue('username')} /></td> 
+                <td><input type='text' className='InputName' onChange={handleInputValue('username')} /></td> 
               </tr>
               <tr>
                 <td className='item-name'>아이디</td>
-                <td><input type='text' onChange={handleInputValue('userId')} /></td>
+                <td><input type='text' className='InputId' onChange={handleInputValue('userId')} /></td>
               </tr>
             <tr>
               <td className='item-name'>생년월일</td>
@@ -71,6 +72,7 @@ export default function Signup () {
               <td>
                 <input
                   type='password'
+                  className='InputPassword'
                   onChange={handleInputValue('password')}
                 />
               </td>
@@ -80,6 +82,7 @@ export default function Signup () {
               <td>
               <input
                 type='password'
+                className='InputPassword'
                 onChange={handleInputValue('password')}
               />
               </td>
@@ -87,25 +90,24 @@ export default function Signup () {
             <tr>
               <td className='item-name'>전화번호</td>
               <td>
-                <input type='tel' className='tel' onChange={handleInputValue('mobileHead')} />
-                <input type='tel' className='tel' onChange={handleInputValue('mobileBody')} />
+                <input type='tel' className='InputPhone01' onChange={handleInputValue('mobileHead')} />
+                <input type='tel' className='InputPhone02' onChange={handleInputValue('mobileBody')} />
               </td>
             </tr>
           </tbody>
         </table>
-          <div>
+          <div className='Text'>
             <Link to='/login'>이미 아이디가 있으신가요?</Link>
           </div>
           <button
-            className='btn btn-signup'
+            className='btn-signup'
             type='submit'
             onClick={handleSignup}
           >
             확인
           </button>
-          {errorMessage ? <div className='alert-box' >{errorMessage}</div> : null}
+          {errorMessage ? <div className='alert-boxSign' >{errorMessage}</div> : null}
         </form>
-        <div className='line'></div>
       </center>
     </div>
   );
