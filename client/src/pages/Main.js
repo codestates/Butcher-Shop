@@ -62,10 +62,6 @@ export default function Main({ isLogin, handleLogout }) {
     const handleSearch = (event) => {
         setsearchValue(event.target.value)
     }
-    const log = (a) => {
-        console.log(a);
-        return a
-    }
 
     return (
         <div id='all'>
