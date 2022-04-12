@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './Modal.css';
 import Meat from './Meat.js';
-import data from '../pages/image/data.js'
+import meatdata from '../pages/image/meatdata.js'
 
 export default function Modal ({imageName,closeModal}) {
-    const imagedata = data.filter((el)=> {
+    const imagedata = meatdata.filter((el)=> {
       if(el.name===imageName) {
           return el;
       }  

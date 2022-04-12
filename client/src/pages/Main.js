@@ -3,17 +3,22 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Main.css';
 import Meat from '../component/Meat.js'
-import data from './image/data.js'
 import Modal from '../component/Modal.js'
 
 export default function Main ({isLogin,handleLogout}) {
-    const [categoryData , setcategoryData] = useState(data)
+    let data =[];
+    const [categoryData , setcategoryData] = useState([])
     const [imageClick , setimageClick] = useState(false)
     const [imageName , setimageName] = useState()
     const [categoryClick , setcategoryClick] = useState(false);
     const [searchValue,setsearchValue] = useState('') 
-    const [searchData , setsearchData] = useState(data)
+    const [searchData , setsearchData] = useState([])
     useEffect(()=> {
+        axios.get('https://localhost:4000/items')
+        .then(response=>{data=response.data; setcategoryData(response.data); setsearchData(response.data)})
+    },[])
+    useEffect(()=> {
+        console.log(data);
        const filterSearchData = data.filter((el)=> {
            if(searchValue==='') {
               return el;
@@ -52,14 +57,17 @@ export default function Main ({isLogin,handleLogout}) {
     const handleSearch = (event) => {
         setsearchValue(event.target.value)
     }
-
+    if(data===undefined) {
+        return '기다려주세요'
+    }
+    else {
     return (
         <div id='all'>
         <h1 id = 'main'>Bucher Shop</h1>
         <div className='userNav'>
             {isLogin ? 
             <div className='afterLogin'>
-                <Link to = '/mypage'><img src = {data[9].src} className='useritem userimage'/></Link>
+                <Link to = '/mypage'><img src = {data[9]} className='useritem userimage'/></Link>
                 <div className='useritem logout' onClick={handleLogout}>로그 아웃</div>
                 <Link to = '/basket'><div className='useritem'>장바구니</div></Link>
             </div>
@@ -78,12 +86,9 @@ export default function Main ({isLogin,handleLogout}) {
         </div>
         <div className='meatContainer'>
         {!categoryClick ?  searchData.map((el)=> {
-            if(el.category===undefined) {
-                return;
-            }
             return (
                 <div key = {el.id} className = 'meatList'>
-                    <Meat source = {el.src} price = {el.price} name = {el.name} handleimageClick={handleimageClick}/>
+                    <Meat source = {el.image} price = {el.price} name = {el.name} handleimageClick={handleimageClick}/>
                 </div>
             )
         })
@@ -100,6 +105,8 @@ export default function Main ({isLogin,handleLogout}) {
     }
         </div>
         </div>
+
     );
+}
 }
 

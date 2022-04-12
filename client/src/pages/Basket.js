@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import data from './image/data.js'
+import meatdata from './image/meatdata.js'
 import axios from 'axios';
 import './Basket.css';
 
@@ -44,7 +44,7 @@ export default function ChangePassword () {
               <th>상품가격</th>
               </tr>
               <tr>
-                  <td><img src = {data[3].src} ></img></td>
+                  <td><img src = {meatdata[3].src} ></img></td>
                   <td>고기</td>
                   <td>2</td>
                   <td>50000원</td>

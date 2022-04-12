@@ -13,6 +13,7 @@ import ChangeUserInfo from './pages/ChangeUserInfo';
 export default function App () {
   const [isLogin, setIsLogin] = useState(false);
   const [userinfo, setUserinfo] = useState(null);
+  const [meat, setmeat] = useState('')
   const history = useHistory();
   const isAuthenticated = () => {
     axios.get('https://localhost:4000/auth').then((data)=> {
