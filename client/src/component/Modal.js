@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Modal.css';
 import Meat from './Meat.js';
 
-export default function Modal ({meatdata,closeModal,imageName}) {
+export default function Modal ({meatdata,closeModal,imageName,handleMeatData}) {
     const [checkAni,setcheckAni] = useState(false)
     const imagedata = meatdata.filter((el)=> {
       if(el.name===imageName) {
@@ -18,7 +18,7 @@ export default function Modal ({meatdata,closeModal,imageName}) {
                 {checkAni ? <div>
                 <div className='afterani'>{imageName}를 장바구니에 추가했습니다.</div> 
                 <div className='afterani'> 더 구매하시겠습니까? </div>
-                <button className='afteraniBtn' onClick={startAnimation}>클릭</button>
+                <button className='afteraniBtn' onClick={()=> {startAnimation(); handleMeatData(imagedata)}}>클릭</button>
                 </div> :null}
                 <div>
                 <img src = {imagedata[0].image} className = {checkAni?  'modalImageAnimation' : 'modalImage'} />

@@ -12,8 +12,8 @@ import ChangeUserInfo from './pages/ChangeUserInfo';
 
 export default function App () {
   const [isLogin, setIsLogin] = useState(false);
-  const [userinfo, setUserinfo] = useState(null);
-  const [meat, setmeat] = useState('')
+  const [userinfo, setUserinfo] = useState({});
+  const [meat, setmeat] = useState([])
   const history = useHistory();
   const isAuthenticated = () => {
     axios.get('https://localhost:4000/auth').then((data)=> {
@@ -39,6 +39,9 @@ export default function App () {
       history.push('/');
     });
   };
+  const handleMeatData = (data) => {
+    setmeat([...meat,...data])
+  }
 
   useEffect(() => {
     isAuthenticated();
@@ -63,7 +66,7 @@ export default function App () {
           <ChangeUserInfo  />
         </Route>
         <Route exact path='/basket'>
-          <Basket />
+          <Basket meatdata = {meat} userinfo={userinfo}/>
         </Route>
         
         <Route exact path='/dropsign'>
@@ -73,7 +76,7 @@ export default function App () {
           <Mypage userinfo={userinfo} handleLogout={handleLogout} />
         </Route>
         <Route path='/'>
-          <Main isLogin={isLogin} handleLogout={handleLogout} />
+          <Main isLogin={isLogin} handleLogout={handleLogout} handleMeatData={handleMeatData} />
           {/* {isLogin ? <Redirect to='/mypage' /> : <Redirect to='/login' />}  */}
         </Route>
       </Switch>

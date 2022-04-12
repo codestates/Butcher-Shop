@@ -5,7 +5,7 @@ import './Main.css';
 import Meat from '../component/Meat.js'
 import Modal from '../component/Modal.js'
 
-export default function Main({ isLogin, handleLogout }) {
+export default function Main({ isLogin, handleLogout,handleMeatData }) {
     const [data, setData]= useState([]);
     const [categoryData, setcategoryData] = useState([])
     const [imageClick, setimageClick] = useState(false)
@@ -85,7 +85,7 @@ export default function Main({ isLogin, handleLogout }) {
                 <div className='item item4' onClick={(event) => handleClickCategory(event)}>가공품</div>
             </div>
             <div>
-                {imageClick === true ? <Modal imageName={imageName} closeModal={closeModal} meatdata = {data} /> : null}
+                {imageClick === true ? <Modal handleMeatData={handleMeatData} imageName={imageName} closeModal={closeModal} meatdata = {data} /> : null}
             </div>
             <div className='meatContainer'>
                 {!categoryClick ? searchData.map((el) => {

@@ -5,7 +5,21 @@ import './Basket.css';
 
 axios.defaults.withCredentials = true;
 
-export default function Basket () {
+export default function Basket ({meatdata,userinfo}) {
+  const history = useHistory();
+  let totalprice = 0;
+  if(meatdata.length!==0) {
+  meatdata.forEach((el)=> {
+    totalprice = totalprice + Number(el.price);
+  })
+  }
+  console.log(meatdata)
+  const handleBuyBtn = () => {
+  let dataToSend = meatdata;
+  return axios
+    .post("https://localhost:4000/orderitems",dataToSend)
+    .then(history.push('/')).then(window.location.reload(false))
+};
     return (
       <div className='Basket'>
           <table className='Table'>
@@ -16,12 +30,15 @@ export default function Basket () {
                 <th className='OrderCategory'>수량</th>
                 <th className='OrderCategory'>상품가격</th>
               </tr>
-              <tr>
-                  <td className='OrderList'>image</td>
-                  <td className='OrderList'>고기</td>
-                  <td className='OrderList'>2</td>
-                  <td className='OrderList'>50000원</td>
-              </tr>
+              
+                {meatdata.map((el)=> {
+                  return (<tr className='OrderListcontainer' key = {el.id}>
+                  <td className='OrderList'><img src = {el.image} /></td>
+                  <td className='OrderList'>{el.name}</td>
+                  <td className='OrderList'>1</td>
+                  <td className='OrderList'>{el.price}</td>
+                  </tr>)
+                })}
             </tbody>
           </table>
 
@@ -37,9 +54,9 @@ export default function Basket () {
             <div>
               <div className='OrderInfoText'>주문자 정보</div>
               <div className='OrderName'>주문자 명</div>
-              <div className='OrderNameText'>11111</div> {/* 마이페이지 정보 */}
+              <div className='OrderNameText'>{userinfo.data ===undefined? '로딩중' : userinfo.data.userInfo.username}</div> {/* 마이페이지 정보 */}
               <div className='OrderPhoneNumber'>전화번호</div> {/* 마이페이지 정보 */}
-              <div className='OrderPhoneNumberText'>1111</div>
+              <div className='OrderPhoneNumberText'>{userinfo.data ===undefined? '로딩중입니다' : userinfo.data.userInfo.username}</div>
             </div>
           </div>
 
@@ -47,7 +64,11 @@ export default function Basket () {
             <div className='PriceInfoText'>주문가격</div>
             <div className='TotalPrice'>총 가격</div>
             <div className='LineDash'></div>
-            <div className='TotalPriceText'>111111</div>
+            <div className='TotalPriceText'>{totalprice? totalprice : '로딩중입니다'}</div>
+            <div>
+              <button className='basketBuyBtn' onClick={handleBuyBtn}>구매하기</button>
+              <Link to = '/'><button className='basketToMain'>돌아가기</button></Link>
+            </div>
           </div>
       </div>
   )
