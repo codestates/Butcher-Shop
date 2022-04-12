@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './Modal.css';
 import Meat from './Meat.js';
-import data from '../pages/image/data.js'
 
-export default function Modal ({imageName,closeModal}) {
-    const imagedata = data.filter((el)=> {
+export default function Modal ({meatdata,closeModal,imageName}) {
+    const imagedata = meatdata.filter((el)=> {
       if(el.name===imageName) {
           return el;
       }  
@@ -13,7 +12,7 @@ export default function Modal ({imageName,closeModal}) {
         <div className="ModalBackground">
             <div className="Modal">
                 <div>
-                <img src = {imagedata[0].src} className = 'modalImage' />
+                <img src = {imagedata[0].image} className = 'modalImage' />
                 </div>
                 <div>
                     {imageName}

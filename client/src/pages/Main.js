@@ -85,7 +85,7 @@ export default function Main({ isLogin, handleLogout }) {
                 <div className='item item4' onClick={(event) => handleClickCategory(event)}>가공품</div>
             </div>
             <div>
-                {imageClick === true ? <Modal imageName={imageName} closeModal={closeModal} /> : null}
+                {imageClick === true ? <Modal imageName={imageName} closeModal={closeModal} meatdata = {data} /> : null}
             </div>
             <div className='meatContainer'>
                 {!categoryClick ? searchData.map((el) => {
@@ -111,6 +111,7 @@ export default function Main({ isLogin, handleLogout }) {
                 }
             </div>
         </div>
+
     );
 }
 

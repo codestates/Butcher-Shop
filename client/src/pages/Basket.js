@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import data from './image/data.js'
 import axios from 'axios';
 import './Basket.css';
 
