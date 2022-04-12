@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   recipe.init({
     name: DataTypes.STRING,
+    time: DataTypes.STRING,
     method: DataTypes.STRING,
     material: DataTypes.STRING,
     image: DataTypes.STRING
