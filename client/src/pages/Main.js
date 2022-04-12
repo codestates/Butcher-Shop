@@ -6,7 +6,7 @@ import Meat from '../component/Meat.js'
 import Modal from '../component/Modal.js'
 
 export default function Main({ isLogin, handleLogout }) {
-    let data = [];
+    const [data, setData]= useState([]);
     const [categoryData, setcategoryData] = useState([])
     const [imageClick, setimageClick] = useState(false)
     const [imageName, setimageName] = useState()
@@ -18,13 +18,14 @@ export default function Main({ isLogin, handleLogout }) {
         axios
             .get('https://localhost:4000/items')
             .then(response => {
-                data = response.data
+                setData(response.data)
                 setcategoryData(response.data)
                 setsearchData(response.data)
             })
     }, [])
     useEffect(() => {
-        const filterSearchData = data.filter((el) => {
+        console.log(categoryData);
+        const filterSearchData = categoryData.filter((el) => {
             if (searchValue === '') {
                 return el;
             }
@@ -39,10 +40,10 @@ export default function Main({ isLogin, handleLogout }) {
     }, [searchValue])
 
     const handleClickCategory = (event) => {
-        // console.log(event.target.innerHTML)
         setcategoryClick(true);
+        console.log(data);
         let newCategoryData = data.filter((el) => {
-            if (el.category === event.target.innerHTML) {
+            if (el.type === event.target.innerHTML) {
                 return el;
             }
         })
@@ -79,7 +80,7 @@ export default function Main({ isLogin, handleLogout }) {
             <div className='meatNav'>
                 <div className='item item4' onClick={(event) => handleClickCategory(event)}>전체보기</div>
                 <div className='item item1' onClick={(event) => handleClickCategory(event)}>소고기</div>
-                <div className='item item2' onClick={(event) => handleClickCategory(event)}>돼지 고기</div>
+                <div className='item item2' onClick={(event) => handleClickCategory(event)}>돼지고기</div>
                 <div className='item item3' onClick={(event) => handleClickCategory(event)}>닭고기</div>
                 <div className='item item4' onClick={(event) => handleClickCategory(event)}>가공품</div>
             </div>
