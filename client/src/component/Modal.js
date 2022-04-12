@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Modal.css';
 import Meat from './Meat.js';
 
@@ -32,9 +33,9 @@ export default function Modal ({meatdata,closeModal,imageName}) {
                    가격: {imagedata[0].price}원
                 </div>
                 <span>
-                <button className="recipeBtn">
-                    레시피 보기 
-                </button>
+                <Link to='/Resipes'>
+                    <button className="recipeBtn">레시피 보기</button>
+                </Link>
                 </span>
                 <span>
                 <button className="buyBtn" onClick={startAnimation}>

@@ -1,0 +1,95 @@
+/* 기본 틀*/
+
+.Recipe {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    position: absolute;
+    top: 300px;
+    left: 550px;
+    height: 1100px;
+    width: 1080px;
+}
+.NavBar {
+    border: 1px solid red;
+    border-radius: 20px;
+    position: absolute;
+    top: 20px;
+    left: 140px;
+    width: 800px;
+    height: 150px;
+    list-style: none;
+}
+
+.RecipeNav {
+    color: black;
+    background-color: darkgray;
+    border-radius: 20px;
+    list-style: none;
+    margin-right: 20px;
+    width: 120px;
+    height: 50px;
+    float: left;
+    display:grid;
+    align-items:center;
+    top:50%;
+    left:50%;
+    margin: 10px;
+}
+
+
+/* 레시피 정보 */
+
+.ResipeCell {
+    list-style: none;
+    border: 1px solid black;
+    display: flex;
+    position: relative;
+    top: 250px;
+    left: 100px;
+    height: 100px;
+    width: 600px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.ResipePicture {
+    background-color: silver;
+    margin-right: 100px;
+    width: 120px;
+    display:grid;
+    align-items:center;
+    list-style: none;
+    border-right: 1px solid black;
+}
+
+.ResipeName {
+    border-bottom: 1px solid black;
+    position: absolute;
+    width: 190px;
+    height: 30px;
+    left: 120px;
+    list-style: none;
+    text-align: left;
+}
+
+.ResipeTime {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    left: 310px;
+    list-style: none;
+    text-align: left;
+}
+
+.ResipeInfo {
+    position: absolute;
+    width: 479px;
+    height: 69px;
+    top: 30px;
+    left: 120px;
+    list-style: none;
+    text-align: left;
+}

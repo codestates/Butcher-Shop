@@ -5,11 +5,12 @@ import Signup from './pages/Signup';
 import Mypage from './pages/Mypage';
 import Main from './pages/Main';
 import axios from 'axios';
+import Resipes from './pages/Resipes'
 import ChangePassword from './pages/ChangePassword';
 import Dropsign from './pages/Dropsign';
 import Basket from './pages/Basket'
 import ChangeUserInfo from './pages/ChangeUserInfo';
-
+ 
 export default function App () {
   const [isLogin, setIsLogin] = useState(false);
   const [userinfo, setUserinfo] = useState(null);
@@ -65,7 +66,9 @@ export default function App () {
         <Route exact path='/basket'>
           <Basket />
         </Route>
-        
+        <Route exact path='/resipes'>
+          <Resipes />
+        </Route>        
         <Route exact path='/dropsign'>
           <Dropsign handleLogout={handleLogout} />
         </Route>
