@@ -170,3 +170,33 @@
     right: 20px;
     font-size: 24px;
 }
+.basketBuyBtn {
+    position: relative;
+    border-radius: 30px;
+    width:150px;
+    height:70px;
+    left:50px;
+    top:250px;
+    font-size:large;
+    color:rgb(255, 0, 221);
+}
+.basketBuyBtn:hover {
+    background-color: rgb(17, 0, 255); 
+    color:white;
+    transition:0.5s ;
+}
+.basketToMain {
+    position: relative;
+    border-radius: 30px;
+    width:150px;
+    height:70px;
+    left:200px;
+    top:250px;
+    font-size:large;
+    color:rgb(255, 0, 221);
+}
+.basketToMain:hover {
+    background-color: rgb(17, 0, 255); 
+    color:white;
+    transition:0.5s ;
+}
