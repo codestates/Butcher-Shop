@@ -5,8 +5,15 @@ body {
     margin:0;
     padding:0;
 }
-img {  
-  width:500px;
-  height:400px;
+.ModalMeat {  
+  border: 1px solid black;
+  width:448px;
+  height:350px;
   object-fit: cover;
+}
+
+.ModalName{
+  font-size: 20px;
+  text-align: left;
+  margin-left: 5px;
 }

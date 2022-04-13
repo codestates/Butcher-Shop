@@ -70,6 +70,8 @@ body {
     transition:0.5s ;
 }
 .modalImage {
+    height:400px;
+    object-fit: cover;
     width:100%;
 }
 .imagename {
