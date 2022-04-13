@@ -71,7 +71,7 @@ export default function App () {
           <Basket meatdata = {meat} userinfo={userinfo}/>
         </Route>
         <Route exact path='/resipes'>
-          <Resipes />
+          <Resipes meatdata = {meat}/>
         </Route>        
         <Route exact path='/dropsign'>
           <Dropsign handleLogout={handleLogout} />

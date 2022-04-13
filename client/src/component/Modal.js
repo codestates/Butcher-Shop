@@ -38,7 +38,7 @@ export default function Modal ({meatdata,closeModal,imageName,handleMeatData}) {
                 </div>
                 <span>
                 <Link to='/Resipes'>
-                    <button className="recipeBtn">레시피 보기</button>
+                    <button className="recipeBtn" onClick={()=>{handleMeatData(imagedata,count)}}>레시피 보기</button>
                 </Link>
                 </span>
                 <span>
