@@ -18,12 +18,14 @@ export default function Resipes ({meatdata}) {
     
     return (
         <div className='Recipe'>
+            <div className='recipetitle'>가장 맛있는 조리법</div>
             <center className='RecipeContainer'>
                 
                 <div>
                     <ul>
                         {ResipesDatas.map((x) => {
-                            return(<li className='ResipeCell' key={x.id}>
+                            return(
+                            <li className='ResipeCell' key={x.id}>
                             {ResipesDatas.length === 0 ? null : <div> 
                             <img className='ResipePicture' src={x.image}/>
                             <div className='ResipeName'>{x.name}</div>
