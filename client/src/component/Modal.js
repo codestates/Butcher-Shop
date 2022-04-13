@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Modal.css';
 import Meat from './Meat.js';
 
@@ -27,7 +28,7 @@ export default function Modal ({meatdata,closeModal,imageName,handleMeatData}) {
                 {checkAni===false ? 
                 <div>
                 <div className='imagename'>
-                   상품명: {imageName}
+                    상품명: {imageName}
                 </div>
                 <div className='pricevalue'>
                    가격: {imagedata[0].price}원
@@ -36,9 +37,9 @@ export default function Modal ({meatdata,closeModal,imageName,handleMeatData}) {
                 수량을 입력하고 구매하기 클릭! <input type = 'number' value = {count} className='meatcountbar' onChange={(event)=> setcount(event.target.value)}></input>
                 </div>
                 <span>
-                <button className="recipeBtn">
-                    레시피 보기 
-                </button>
+                <Link to='/Resipes'>
+                    <button className="recipeBtn">레시피 보기</button>
+                </Link>
                 </span>
                 <span>
                 <button className="buyBtn" onClick={startAnimation}>
