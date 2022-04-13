@@ -53,13 +53,14 @@
 }
 
 .ResipePicture {
-    background-color: silver;
     margin-right: 100px;
     width: 120px;
-    display:grid;
+    height: 100px;
+    position: absolute;
     align-items:center;
     list-style: none;
-    border-right: 1px solid black;
+    border: 1px solid red;
+    object-fit: cover;
 }
 
 .ResipeName {

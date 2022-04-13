@@ -27,7 +27,7 @@ export default function Modal ({meatdata,closeModal,imageName,handleMeatData}) {
                 {checkAni===false ? 
                 <div>
                 <div className='imagename'>
-                   상품명: {imageName}
+                    상품명: {imageName}
                 </div>
                 <div className='pricevalue'>
                    가격: {imagedata[0].price}원
