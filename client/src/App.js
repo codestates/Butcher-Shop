@@ -39,7 +39,8 @@ export default function App () {
       history.push('/');
     });
   };
-  const handleMeatData = (data) => {
+  const handleMeatData = (data,count) => {
+    data[0].count = count;
     setmeat([...meat,...data])
   }
 

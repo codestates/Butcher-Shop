@@ -4,6 +4,7 @@ import Meat from './Meat.js';
 
 export default function Modal ({meatdata,closeModal,imageName,handleMeatData}) {
     const [checkAni,setcheckAni] = useState(false)
+    const [count,setcount] = useState(0);
     const imagedata = meatdata.filter((el)=> {
       if(el.name===imageName) {
           return el;
@@ -18,7 +19,7 @@ export default function Modal ({meatdata,closeModal,imageName,handleMeatData}) {
                 {checkAni ? <div>
                 <div className='afterani'>{imageName}를 장바구니에 추가했습니다.</div> 
                 <div className='afterani'> 더 구매하시겠습니까? </div>
-                <button className='afteraniBtn' onClick={()=> {startAnimation(); handleMeatData(imagedata)}}>클릭</button>
+                <button className='afteraniBtn' onClick={()=> {startAnimation(); handleMeatData(imagedata,count)}}>클릭</button>
                 </div> :null}
                 <div>
                 <img src = {imagedata[0].image} className = {checkAni?  'modalImageAnimation' : 'modalImage'} />
@@ -30,6 +31,9 @@ export default function Modal ({meatdata,closeModal,imageName,handleMeatData}) {
                 </div>
                 <div className='pricevalue'>
                    가격: {imagedata[0].price}원
+                </div>
+                <div className='meatcount'>
+                수량을 입력하고 구매하기 클릭! <input type = 'number' value = {count} className='meatcountbar' onChange={(event)=> setcount(event.target.value)}></input>
                 </div>
                 <span>
                 <button className="recipeBtn">
