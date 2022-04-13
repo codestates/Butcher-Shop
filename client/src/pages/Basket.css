@@ -83,7 +83,7 @@
 .OrderNameText {
     position: absolute;
     top: 220px;
-    right: 447px;
+    right: 400px;
     font-size: 24px;
     border: 1px solid red;
 }
@@ -91,14 +91,14 @@
 .OrderPhoneNumber {
     position: absolute;
     top: 280px;
-    right: 407px;
+    right: 400px;
     font-size: 24px;
 }
 
 .OrderPhoneNumberText {
     position: absolute;
     top: 340px;
-    right: 447px;
+    right: 400px;
     font-size: 24px;
     border: 1px solid red;
 }

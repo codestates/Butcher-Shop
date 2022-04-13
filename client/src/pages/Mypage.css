@@ -108,8 +108,8 @@
 .usernameValue {
     position: absolute;
     top: 30px;
-    left:240px;
-    width:5px;
+    left:210px;
+    width:200px;
     height:50px;
     color:rgb(92, 48, 117);
     font-size:3rem;

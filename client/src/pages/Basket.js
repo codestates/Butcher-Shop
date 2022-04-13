@@ -48,7 +48,7 @@ export default function Basket ({meatdata,userinfo}) {
               <div className='OrderName'>주문자 명</div>
               <div className='OrderNameText'>{userinfo.data ===undefined? '로딩중' : userinfo.data.userInfo.username}</div> {/* 마이페이지 정보 */}
               <div className='OrderPhoneNumber'>전화번호</div> {/* 마이페이지 정보 */}
-              <div className='OrderPhoneNumberText'>{userinfo.data ===undefined? '로딩중입니다' : userinfo.data.userInfo.username}</div>
+              <div className='OrderPhoneNumberText'>{userinfo.data ===undefined? '로딩중입니다' : userinfo.data.userInfo.mobile}</div>
             </div>
           </div>
 

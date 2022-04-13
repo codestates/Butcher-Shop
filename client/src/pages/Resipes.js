@@ -4,18 +4,18 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
-export default function Resipes () {
+export default function Resipes ({meatdata}) {
 
-    const [ResipesDatas, setdata]= useState([]);
-
+    const [ResipesDatas, setdata]= useState([]); 
+    console.log(meatdata)
     useEffect(() => {
         axios
-        .get('https://localhost:4000/recipes?name=닭고기')
+        .get(`https://localhost:4000/recipes?name=${meatdata[0].name}`)
         .then(response => {
             setdata(response.data)
         })
     }, []);
-    console.log(ResipesDatas)
+    
     return (
         <div className='Recipe'>
             <center className='RecipeContainer'>
