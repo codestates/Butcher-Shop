@@ -86,6 +86,12 @@ body {
     text-shadow: 1px 1px #020b16;
     letter-spacing: 5px;
 }
+.meatcount {
+    text-align: center;
+}
+.meatcountbar {
+    width:50px;
+}
 .modalImageAnimation {
     animation: scale2 3s forwards; 
 }

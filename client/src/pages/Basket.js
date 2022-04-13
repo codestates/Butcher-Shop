@@ -6,11 +6,12 @@ import './Basket.css';
 axios.defaults.withCredentials = true;
 
 export default function Basket ({meatdata,userinfo}) {
+  console.log(meatdata)
   const history = useHistory();
   let totalprice = 0;
   if(meatdata.length!==0) {
   meatdata.forEach((el)=> {
-    totalprice = totalprice + Number(el.price);
+    totalprice = totalprice + Number(el.price) * Number(el.count);
   })
   }
   console.log(meatdata)
@@ -35,21 +36,12 @@ export default function Basket ({meatdata,userinfo}) {
                   return (<tr className='OrderListcontainer' key = {el.id}>
                   <td className='OrderList'><img src = {el.image} /></td>
                   <td className='OrderList'>{el.name}</td>
-                  <td className='OrderList'>1</td>
+                  <td className='OrderList'>{el.count}</td>
                   <td className='OrderList'>{el.price}</td>
                   </tr>)
                 })}
             </tbody>
           </table>
-
-          <div className='ClientInfomation'>
-            <div className='Delivery'>
-              <div className='CraditListDel'>배송 정보</div>
-              <div className='AdressInfo'>주소 정보</div>
-              <input className='AdressInput' type= "text" disabled/> {/* 마이페이지 정보 */}
-            </div>
-          </div>
-
           <div className='OrderInfomation'>
             <div>
               <div className='OrderInfoText'>주문자 정보</div>

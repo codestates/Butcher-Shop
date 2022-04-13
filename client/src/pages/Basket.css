@@ -16,9 +16,9 @@
 .Basket {
     background-color: #E2A7B7;
     position: absolute;
-    top: 30%;
+    top:3%;
     left: 50%;
-    width: 1500px;
+    width: 95%;
     height: 1080px;
     transform: translateX(-50%);
     border-left: solid 4px white;
@@ -27,112 +27,77 @@
 
 /* 구매 상품 정보 */
 .Basket > .Table {
+    display:flex;
     text-align: center;
     border: 2x solid black;
     border-collapse: collapse;
     table-layout: fixed;
-    width: 1493px;
+    width: 1000px;
     height: 100px;
 }
+.OrderImage {
+   
+}
+
 .OrderCategory {
-    height: 50px;
+    height: 10px;
+    width: 100px;
     border: 2px solid cadetblue;
     border-bottom: 3px solid black;
 }
 
+
 .OrderList {
-    border: 2px solid cadetblue;
-    height: 100px;
+    border: 1px solid cadetblue;
+    height: 10px;
+    color:rgb(0, 0, 0);
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
-/* 배송 정보 */
-.ClientInfomation {
-    background-color: silver;
-
-    border-radius: 50px;
-    position: absolute;
-    top: 300px;
-    left: 20px;
-    width: 900px;
-    height: 660px;
-}
-
-.Delivery {
-    background-color: palegreen;
-    border-radius: 20px;
-    position: absolute;
-    top: 150px;
-    left: 20px;
-    width: 800px;
-    height: 260px;
-}
-
-.CraditListDel {
-    position: absolute;
-    top: -90px;
-    left: 10px;
-    font-size: 35px;
-}
-
-.AdressInfo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 24px;
-}
-.AdressInput {
-    font-style: normal;
-    position: absolute;
-    top: 60px;
-    left: 10px;
-    width: 600px;
-    height: 180px;
-}
-
 /* 주문자 정보 */
 
 .OrderInfomation {
     background-color: sandybrown;
     border-radius: 50px;
     position: absolute;
-    top: 300px;
+    top: 0px;
     right: 20px;
     width: 520px;
-    height: 660px;
+    height: 500px;
 }
 
 .OrderInfoText {
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 340px;
     font-size: 35px;
 }
 
 .OrderName {
     position: absolute;
-    top: 130px;
+    top: 160px;
     right: 400px;
     font-size: 24px;
 }
 
 .OrderNameText {
     position: absolute;
-    top: 170px;
-    right: 435px;
+    top: 220px;
+    right: 447px;
     font-size: 24px;
     border: 1px solid red;
 }
 
 .OrderPhoneNumber {
     position: absolute;
-    top: 220px;
+    top: 280px;
     right: 407px;
     font-size: 24px;
 }
 
 .OrderPhoneNumberText {
     position: absolute;
-    top: 260px;
+    top: 340px;
     right: 447px;
     font-size: 24px;
     border: 1px solid red;
@@ -143,7 +108,7 @@
     background-color: skyblue;
     border-radius: 50px;
     position: absolute;
-    top: 600px;
+    top: 500px;
     right: 20px;
     width: 520px;
     height: 360px;
@@ -151,7 +116,7 @@
 
 .PriceInfoText {
     position: absolute;
-    top: 40px;
+    top: 50px;
     right: 380px;
     font-size: 35px;
 }
