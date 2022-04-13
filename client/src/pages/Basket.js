@@ -34,10 +34,10 @@ export default function Basket ({meatdata,userinfo}) {
               
                 {meatdata.map((el)=> {
                   return (<tr className='OrderListcontainer' key = {el.id}>
-                  <td className='OrderList'><img src = {el.image} /></td>
+                  <td className='OrderList1'><img src = {el.image} /></td>
                   <td className='OrderList'>{el.name}</td>
-                  <td className='OrderList'>{el.count}</td>
-                  <td className='OrderList'>{el.price}</td>
+                  <td className='OrderList'>{el.count}개</td>
+                  <td className='OrderList'>{el.price}원</td>
                   </tr>)
                 })}
             </tbody>

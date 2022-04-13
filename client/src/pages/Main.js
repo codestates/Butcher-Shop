@@ -66,15 +66,17 @@ export default function Main({ isLogin, handleLogout,handleMeatData }) {
 
     return (
         <div id='all'>
-            <h1 id='main'>Bucher Shop</h1>
+            <h1 id='main'>Butcher Shop</h1>
             <div className='userNav'>
                 {isLogin ?
                     <div className='afterLogin'>
-                        <Link to='/mypage'><img src='user.png' className='useritem userimage' /></Link>
-                        <div className='useritem logout' onClick={handleLogout}>로그 아웃</div>
+                        <Link to='/mypage'><img src='user.png' className='userimage' /></Link>
+                        <div className='useritem logout' onClick={handleLogout}>로그아웃</div>
                         <Link to='/basket'><div className='useritem'>장바구니</div></Link>
                     </div>
-                    : <Link to='/login' className='useritem'>로그인</Link>}
+                    : <Link to='/login' className='useritem'>로그인</Link>
+                }
+                <img src='search.png' className='SearchIcon' />
                 <input type='text' placeholder='메뉴를 검색해 보세요!' className='search' onChange={(event) => handleSearch(event)}></input>
             </div>
             <div className='meatNav'>

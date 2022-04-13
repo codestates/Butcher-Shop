@@ -14,6 +14,7 @@ body {
 }
 #main {
     height:9rem;
+    width: 92rem;
     margin:1rem;
     padding:1rem;
     font-size : 6rem;
@@ -22,16 +23,20 @@ body {
     color: pink;
     background-color: #721c24;
     background-image:url(https://cdn.pixabay.com/photo/2016/03/05/23/02/barbecue-1239434_960_720.jpg);
+
 }
 .userNav {
-  margin:10px;
-  padding:5px;  
-  height:4rem;
+  height:5rem;
+  width: 92rem;
+  margin:1rem;
+  padding:1rem; 
   display:flex;
   background-color: #e97381;
 }
 .meatNav {
   display:flex;
+  height:5rem;
+  width: 92rem;
   margin:1rem;
   padding:1rem;
   justify-content: space-between;
@@ -39,48 +44,54 @@ body {
   background-color: #8b8889;
 }
 .useritem {
-  
-  margin:10px;
   padding:1px;
   color: rgb(47, 51, 51);
+  margin-top: 10px;
 }
 .logout {
+  margin-top: 10px;
+  margin-left:80px;
+  margin-right: 20px;
   cursor:pointer;
 }
 .search {
-  margin-left:auto;
-  width:500px;
+  position: absolute;
+  right: 100px;
+  width:300px;
   height:40px;
 
 }
 .item {
   width:15%;
-  padding:0.5rem;
+  padding:0.7rem;
   color:white;
 }
 .userimage {
+  position: absolute;
+  width:52px;
+  height:50px;
+}
+.SearchIcon{
+  position: absolute;
+  right: 50px;
+  top: 197px;
   width:40px;
   height:40px;
 }
 .afterLogin {
   display:flex;
 }
-.item1 {
+.item1, .item2, .item3, .item4 {
     background-color:#e97381;
-}
-.item2 {
-    background-color:#e97381
-}
-.item3 {
-    background-color:#e97381 
-}
-.item4 {
-  background-color:#e97381 
 }
 .meatContainer {
   display: grid;
-  height: 100vh;
+  height: 100px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 0.25rem;
+  grid-gap: 4rem;
+  height:9rem;
+  width: 80rem;
+  margin:0rem;
+  padding:1rem;
 }

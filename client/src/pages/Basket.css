@@ -35,25 +35,30 @@
     width: 1000px;
     height: 100px;
 }
-.OrderImage {
-   
-}
 
 .OrderCategory {
-    height: 10px;
+    height: 60px;
     width: 100px;
-    border: 2px solid cadetblue;
+    border: 2px solid black;
     border-bottom: 3px solid black;
 }
 
+.OrderList1 > img{
+    width:400px;
+    height:200px;
+    object-fit: cover;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
 
 .OrderList {
-    border: 1px solid cadetblue;
-    height: 10px;
+    border: 1px solid black;
     color:rgb(0, 0, 0);
     font-size: large;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 20px;
 }
+
 /* 주문자 정보 */
 
 .OrderInfomation {
@@ -85,7 +90,6 @@
     top: 220px;
     right: 400px;
     font-size: 24px;
-    border: 1px solid red;
 }
 
 .OrderPhoneNumber {
@@ -100,7 +104,6 @@
     top: 340px;
     right: 400px;
     font-size: 24px;
-    border: 1px solid red;
 }
 
 /* 가격 정보 */
@@ -129,7 +132,6 @@
 }
 
 .TotalPriceText {
-    border: 1px solid red;
     position: absolute;
     top: 200px;
     right: 20px;
