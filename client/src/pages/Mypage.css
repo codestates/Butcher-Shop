@@ -113,12 +113,10 @@
     height:50px;
     color:rgb(92, 48, 117);
     font-size:3rem;
-    border: 1px solid red;
     text-align: left;
 
 }
 .useridValue {
-    border: 1px solid red;
     position: absolute;
     top: 30px;
     left:240px;
