@@ -22,7 +22,7 @@
   <tbody>
     <tr>
       <td align="center">
-        <a href="https://github.com/codeFabian">
+        <a href="https://github.com/mokbangkoon">
           <sub>
             <b>차진성</b>
           </sub>
@@ -35,7 +35,7 @@
     </tr>
      <tr>
       <td align="center">
-        <a href="https://github.com/sokim1616">
+        <a href="https://github.com/chunwoolee-work">
           <sub>
             <b>이춘우</b>
           </sub>
@@ -47,7 +47,7 @@
       </td>
     </tr>
       <td align="center">
-        <a href="https://github.com/bombamong">
+        <a href="https://github.com/VRsoda">
           <sub>
             <b>전용남</b>
           </sub>
@@ -60,7 +60,7 @@
     </tr>
     <tr>
       <td align="center">
-        <a href="https://github.com/Kyung-Douhyun">
+        <a href="https://github.com/Mizulatte">
           <sub>
             <b>김주원</b>
           </sub>
