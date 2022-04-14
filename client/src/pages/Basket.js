@@ -46,8 +46,8 @@ export default function Basket ({meatdata,userinfo}) {
             <div>
               <div className='OrderInfoText'>주문자 정보</div>
               <div className='OrderName'>주문자 명</div>
-              <div className='OrderNameText'>{userinfo.data ===undefined? '로딩중' : userinfo.data.userInfo.username}</div> {/* 마이페이지 정보 */}
-              <div className='OrderPhoneNumber'>전화번호</div> {/* 마이페이지 정보 */}
+              <div className='OrderNameText'>{userinfo.data ===undefined? '로딩중' : userinfo.data.userInfo.username}</div>
+              <div className='OrderPhoneNumber'>전화번호</div>
               <div className='OrderPhoneNumberText'>{userinfo.data ===undefined? '로딩중입니다' : userinfo.data.userInfo.mobile}</div>
             </div>
           </div>
@@ -56,7 +56,7 @@ export default function Basket ({meatdata,userinfo}) {
             <div className='PriceInfoText'>주문가격</div>
             <div className='TotalPrice'>총 가격</div>
             <div className='LineDash'></div>
-            <div className='TotalPriceText'>{totalprice? totalprice : '로딩중입니다'}</div>
+            <div className='TotalPriceText'>{totalprice? `${totalprice}원` : '로딩중입니다'}</div>
             <div>
               <button className='basketBuyBtn' onClick={handleBuyBtn}>구매하기</button>
               <Link to = '/'><button className='basketToMain'>돌아가기</button></Link>
