@@ -6,7 +6,6 @@
 ## FRONT
 ![](https://img.shields.io/badge/FRONT-React-61DAFB?style=for-the-badge&logo=React)
 
-![](https://img.shields.io/badge/FRONT-Redux-764ABC?style=for-the-badge&logo=Redux)
 
 ## BACK
 ![](https://img.shields.io/badge/BACK-Node-3776AB?style=for-the-badge&logo=Node.js)
